@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-function Logo({styles}) {
+function Logo({ styles }) {
   return (
     <div>
       <Image
@@ -11,6 +11,7 @@ function Logo({styles}) {
         objectFit="cover"
         blurDataURL="/Engen_Logo.jpeg"
         className={`${styles}`}
+        alt="logo"
       />
     </div>
   );

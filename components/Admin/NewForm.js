@@ -122,7 +122,7 @@ function NewForm({ branches, departments, documents }) {
                 onSubmit={createBranch}
                 className="bg-white w-96 p-6 place-items-center rounded-lg shadow-xl"
               >
-                <label>What's the Branch name</label>
+                <label>What&apos;s the Branch name</label>
                 <input
                   type={"text"}
                   placeholder={"Branch Name"}
@@ -148,7 +148,7 @@ function NewForm({ branches, departments, documents }) {
                 onSubmit={createDept}
                 className="bg-white w-96 p-6 place-items-center rounded-lg  shadow-xl"
               >
-                <label>What's the Department name</label>
+                <label>What&apos;s the Department name</label>
                 <input
                   type={"text"}
                   placeholder={"Department Name"}
@@ -192,7 +192,7 @@ function NewForm({ branches, departments, documents }) {
                 onSubmit={createFolder}
                 className="bg-white w-96 p-6 place-items-center rounded-lg  shadow-xl"
               >
-                <label>What's the Folder name</label>
+                <label>What&apos;s the Folder name</label>
                 <input
                   type={"text"}
                   placeholder={"Folder Name"}

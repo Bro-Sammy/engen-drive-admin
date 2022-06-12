@@ -75,11 +75,18 @@ function Details({folders, session, data,branchData, branches, departments, depa
             <div className="flex flex-row gap-4 overscroll-x-auto mt-5">
               {data.length == 0 ? 
               <div className='items-center flex flex-col justify-center p-4 h-96 w-full'> 
-                <img
-                  src="/empty.png"
-                  alt="empty"
-                  className="w-20 h-20 object-cover"
-                />
+                <div className="w-52 h-52 bg-slate-400 rounded-full">
+                    <Image
+                      src={"/empty.png"}
+                      layout="responsive"
+                      width={512}
+                      height={512}
+                      blurDataURL={`/empty.png`}
+                      placeholder="blur"
+                      alt="empty"
+                      className="object-cover"
+                    />
+                  </div>
                <strong className="font-light">empty</strong> 
                </div>
                : (

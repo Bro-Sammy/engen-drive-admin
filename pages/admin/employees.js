@@ -16,7 +16,7 @@ import { signOut, getSession } from "next-auth/react";
 
 const title = "Employees";
 
-function Employees({session, data, departData, branchData, folders, documents}) {
+function EmployeesPage({session, data, departData, branchData, folders, documents}) {
    
   const router = useRouter();
 
@@ -102,7 +102,7 @@ function Employees({session, data, departData, branchData, folders, documents}) 
 }
 }
 
-export default Employees;
+export default EmployeesPage;
 
 
 export async function getServerSideProps(context) {

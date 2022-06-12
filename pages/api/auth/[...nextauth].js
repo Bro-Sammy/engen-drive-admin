@@ -6,7 +6,7 @@ import bcrypt from 'bcrypt'
 connectMongo()
 
 export default NextAuth({
-    secret: process.env.NEXTAUTH_SECRET,
+    secret: process.env.NEXT_PUBLIC_SECRET,
 
     providers:[
         
@@ -52,7 +52,7 @@ export default NextAuth({
     },
     
     jwt: {
-        secret: process.env.NEXTAUTH_SECRET
+        secret: process.env.NEXT_PUBLIC_SECRET
     },
     pages:{
         signIn: '/',

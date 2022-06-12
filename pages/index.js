@@ -4,20 +4,20 @@ import Image from "next/image";
 import Logo from "../components/Logo";
 import Head from "../components/Head";
 import { LockClosedIcon } from "@heroicons/react/solid";
-import { getCsrfToken ,getSession } from 'next-auth/react'
+import { getCsrfToken, getSession } from "next-auth/react";
 
-function Login({csrfToken}) {
+function Login({ csrfToken }) {
   const [enabled, setEnabled] = useState(true);
   const [message, setMessage] = useState(false);
   const [code, setCode] = useState();
-  const passCode = process.env.NEXT_PUBLIC_PASSCODE;
+  const passCode = 123456 || process.env.NEXT_PUBLIC_PASSCODE;
 
   const checkPassCode = (event) => {
     event.preventDefault();
     if (passCode === code) {
-     return setEnabled(!enabled);
+      return setEnabled(!enabled);
     }
-    return setMessage('Code Not Correct')
+    return setMessage("Code Not Correct");
   };
 
   return (
@@ -122,24 +122,24 @@ function Login({csrfToken}) {
 
 export default Login;
 
-export async function getServerSideProps(context){
-  const {req} = context
-  const session = await getSession({ req })
+export async function getServerSideProps(context) {
+  const { req } = context;
+  const session = await getSession({ req });
 
   // console.log("GSSP req", req)
   // console.log("GSSP session", session)
-  if(session){
+  if (session) {
     return {
-      redirect:{destination: '/admin/dashboard'}
-    }
+      redirect: { destination: "/admin/dashboard" },
+    };
   }
 
-  const csrfToken = await getCsrfToken(context)
-  console.log("GSSP", csrfToken)
+  const csrfToken = await getCsrfToken(context);
+  console.log("GSSP", csrfToken);
 
-  return{
+  return {
     props: {
-      csrfToken
-    }
-  }
+      csrfToken,
+    },
+  };
 }

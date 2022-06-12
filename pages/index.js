@@ -6,6 +6,8 @@ import Head from "../components/Head";
 import { LockClosedIcon } from "@heroicons/react/solid";
 import { getCsrfToken, getSession } from "next-auth/react";
 
+// NEXTAUTH_URL=http://localhost:9001/
+
 function Login({ csrfToken }) {
   const [enabled, setEnabled] = useState(true);
   const [message, setMessage] = useState(false);
